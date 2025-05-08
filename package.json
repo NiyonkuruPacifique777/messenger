@@ -1,0 +1,30 @@
+{
+  "name": "messenger",
+  "version": "1.0.0",
+  "description": "messenger for easy and smooth communication",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiyonkuruPacifique777/clubhousemessenger.git"
+  },
+  "keywords": [
+    "messenger"
+  ],
+  "author": "Niyonkuru Pacifique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NiyonkuruPacifique777/clubhousemessenger/issues"
+  },
+  "homepage": "https://github.com/NiyonkuruPacifique777/clubhousemessenger#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "formidable": "^3.5.4",
+    "multer": "^1.4.5-lts.2",
+    "mysql": "^2.18.1"
+  }
+}

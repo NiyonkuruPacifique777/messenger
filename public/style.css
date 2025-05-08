@@ -1,0 +1,329 @@
+body{
+    background-color: rgb(23, 23, 26);
+    color: rgb(206, 208, 214);
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    border: 1px solid black;
+    border-bottom: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+header{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    box-shadow: 3px 3px 3px 3px rgb(17, 17, 17);
+    margin-bottom: 0.5rem;
+}
+header img{
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    top: 0px;
+    left: 5px;
+}
+header svg{
+    color: rgb(234, 235, 241);
+    float: right;
+    cursor: pointer;
+}
+#leftHeader{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#leftHeader div{
+    margin-right: 1rem;
+}
+#posted{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    justify-content: center;
+    /* justify-items: center; */
+    /* align-items: center; */
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 50px;
+    margin-top: 20px;
+    height: 50rem;
+}
+#vidPosted{
+    min-width: 30rem;
+    height: 48rem;
+    background-color: rgb(12, 12, 17);
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+#recentChats{
+    float: right;
+    min-height: 10rem;
+    min-width: 25rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 50px;
+    position: relative;
+    top: -3rem;
+    justify-content: center;
+    align-content: centre;
+    max-height: 50rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+#recentChats::-webkit-scrollbar{
+    display: none;
+}
+#recentChats p{
+    margin-top: 4rem;
+}
+#desPosted{
+    display: flex;
+    flex-direction: row;
+}
+#postedImg{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4rem;
+    background-color: rgb(12, 12, 17);
+    margin: 20px;
+}
+#buttonStay{
+    width: 15rem;
+    height: 2rem;
+    background-color: rgb(12, 12, 17);
+    margin-top: 3rem;
+    border-radius: 5px;
+}
+#whatElse{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#whatElse .moreVid{
+    width: 10rem;
+    height: 10rem;
+    background-color: rgb(12, 12, 17);
+    border-radius: 20px;
+    margin: 2rem;
+}
+#composeChat,#loginsection{
+    width: 70%;
+    height: 50rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 50px;
+    margin-top: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#composedChat{
+    width: 66%;
+    height: 45rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 50px;
+    margin-top: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    padding: 2rem;
+}
+#composedChat::-webkit-scrollbar{
+    display: none;
+    overflow-y: auto;
+}
+#composeChat input{
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.014);
+    color: aliceblue;
+    border: 0px;
+    border-bottom: 1px solid black;
+    padding-left: 2rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    height: 3rem;
+
+}
+#loginsection input{
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.014);
+    color: aliceblue;
+    border: 0px;
+    border-bottom: 1px solid black;
+    padding-left: 2rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    height: 3rem;
+}
+#composeChat #messager{
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.548);
+    position: relative;
+    bottom: 2rem;
+    height: 10rem;
+    border: 0px;
+    border-bottom: 1px solid black;
+    padding: 2rem;
+    color: aliceblue;
+    resize: none;
+    margin: 3rem;
+    margin-top: 20rem;
+    border-radius: 20px;
+}
+#composeChat #messager:focus{
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.808);
+}
+#composeChat input:focus,#loginsection input:focus{
+    outline: none;
+    border-bottom: 1px solid rgb(172, 174, 185);
+}
+#composeChat label,#loginsection label{
+    display: flex;
+    flex-direction: row;
+}
+#loginsection form button{
+    width: 90%;
+    height: 3rem;
+    border: 1px solid rgb(23, 23, 26);
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    color: aliceblue;
+    background-color: black;
+    margin: 20px;
+    margin-left: 3rem;
+}
+#loginsection form button:hover{
+    background-color: rgb(23, 23, 26);
+    color: rgb(170, 170, 179);
+    border: 1px solid black;
+}
+#fromL p{
+    position: relative;
+    right: -4rem;
+    top: 12px;
+}
+#toL p{
+    position: relative;
+    right: -4rem;
+    top: 12px;
+}
+#composeChat form button{
+    height: 3.4rem;
+    width: 3.4rem;
+    border-radius: 3rem;
+    background-color: rgb(23, 23, 26);
+    border: 1px solid rgb(17, 17, 17);
+    color: white;
+    position: relative;
+    top: -9rem;
+    float: right;
+    margin-right: 2rem;
+}
+#menuRemo{
+    display: none;
+}
+#profile img{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 1.5rem;
+}
+#profile{
+    height:1.5rem;
+    width: 1.5rem;
+    border: 2px solid rgb(23, 23, 26);
+    border-radius: 1.5rem;
+    background-color: rgb(20, 20, 24);
+}
+.iTell{
+    background-color: rgb(10, 10, 10);
+    padding: 10px;
+    color: aliceblue;
+    min-height: 3rem;
+    border-radius: 25px;
+    float: right;
+    width: 50%;
+    min-width: 15rem;
+    margin-bottom: 1rem;
+    
+}
+.youTell{
+    background-color: rgb(73, 59, 94);
+    padding: 10px;
+    color: aliceblue;
+    min-height: 3rem;
+    border-radius: 25px;
+    float: left;
+    margin-bottom: 1rem;
+    width: 50%;
+    min-width: 15rem;
+    
+}
+.iTell svg{
+    float: right;
+    margin-right: 1rem;
+}
+.youTell svg{
+    transform: rotateX(180deg);
+    float: right;
+    margin-right: 1rem;
+}
+#bigProfile{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10rem;
+    background-color: black;
+    margin-top: 50px;
+}
+#bigProfile img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10rem;
+}
+#chatingWith{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
+    background-color: black;
+    position: fixed;
+    top: 4rem;
+    left: 2rem;
+}
+#chatingWith img{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4rem;
+}
+.chat{
+    color: white;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(12, 12, 17);
+    margin-bottom: 0.2rem;
+}
+.chat img{
+    float: left;
+    margin-right: 2rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 5rem;
+}

@@ -1,0 +1,18 @@
+CREATE DATABASE messenger;
+USE messenger;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(400) NOT NULL UNIQUE,
+    password VARCHAR(50) NOT NULL,
+    profile VARCHAR(500),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE chats(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    message_from VARCHAR(400) NOT NULL,
+    message_to VARCHAR(400) NOT NULL,
+    message TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

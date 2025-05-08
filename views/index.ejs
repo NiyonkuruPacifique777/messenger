@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messengerWeb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel = 'icon' href="logo.png">
+    <script>
+        (()=>{
+            var logStatus = "<%= logStatus %>";
+            var userData = "<%= userData %>";
+            var author = "<%= author %>";
+            var username = "<%= user_name %>";
+            if(logStatus != '' && userData != ''){
+            localStorage.setItem('logStatus',logStatus);
+            localStorage.setItem('userData',userData);
+            localStorage.setItem('author',author);
+            localStorage.setItem('userName',username);
+            }
+        })();
+    </script>
+</head>
+<body>
+<%- include('header') %>
+
+<main>
+    <%- include('menubar') %>
+    <aside id="recentChats">
+        <center>
+        <p><i id="p">Your chats will appear hear!</i> <br> <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cloud-haze2" viewBox="0 0 16 16">
+            <path d="M8.5 3a4 4 0 0 0-3.8 2.745.5.5 0 1 1-.949-.313 5.002 5.002 0 0 1 9.654.595A3 3 0 0 1 13 12H4.5a.5.5 0 0 1 0-1H13a2 2 0 0 0 .001-4h-.026a.5.5 0 0 1-.5-.445A4 4 0 0 0 8.5 3M0 7.5A.5.5 0 0 1 .5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m2 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-2 4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5"/>
+          </svg></p>
+        </center>
+    </aside>
+    <div id="posted">
+<div id="vidPosted">
+</div>
+<div id="whoPosted">
+    <div id="desPosted">
+    <div id="postedImg"></div><div id="buttonStay"></div>
+    </div>
+    <div id="whatElse">
+        <div class="moreVid"></div>
+        <div class="moreVid"></div>
+        <div class="moreVid"></div>
+        <div class="moreVid"></div>
+    </div>
+</div>
+</div>
+
+</main>
+    <footer>
+        &copy; Alright reserved by developer <%= author %>
+    </footer>
+    <script>
+            var logStatus = localStorage.getItem('logStatus');
+            var Data = localStorage.getItem('userData');
+            var username = localStorage.getItem('userName');
+        (async()=>{
+            if(logStatus == 'done'){
+                var chated = await fetch(`http://localhost:3000/chated?username=${username}`);
+                var chats = await chated.json();
+                chats.forEach(chat =>{
+                    var chatn = document.createElement('div');
+                    chatn.className = 'chat';
+                    chatn.innerHTML = `<img src=${chat.profile}> ${chat.user_name}`;
+                    document.getElementById('recentChats').appendChild(chatn);
+                    chatn.addEventListener('click',()=>{
+                        window.location.href=`http://localhost:3000/toChat?to=${chat.user_name}`;
+                    })
+                });
+                    document.getElementById('p').innerText = 'Your chats are here!';
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messengerWeb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel = 'icon' href="logo.png">
+</head>
+<body>
+<%- include('header') %>
+<main>
+    <%- include('menubar') %>
+    <aside id="recentChats">
+        <center>
+        <p>Your chats will appear hear! <br> <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-cloud-haze2" viewBox="0 0 16 16">
+            <path d="M8.5 3a4 4 0 0 0-3.8 2.745.5.5 0 1 1-.949-.313 5.002 5.002 0 0 1 9.654.595A3 3 0 0 1 13 12H4.5a.5.5 0 0 1 0-1H13a2 2 0 0 0 .001-4h-.026a.5.5 0 0 1-.5-.445A4 4 0 0 0 8.5 3M0 7.5A.5.5 0 0 1 .5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m2 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-2 4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5"/>
+          </svg></p>
+        </center>
+    </aside>
+    <div id="composeChat">
+        <form action="http://localhost:3000/message" method="post">
+            <label for="from" id="fromL">
+                <p>From:</p>
+            <input type="text" name="from" placeholder="Your username">
+        </label>
+            <label for="writingTo" id="toL"><p>To:&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;</p>
+            <input type="text" name="to" placeholder="Your Friends username">
+        </label>
+            <label for="message"></label>
+            <textarea name="message" id="messager"></textarea>
+            <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+              </svg></button>
+        </form>
+    </div>
+</main>
+    <footer id="foot">
+        &copy; Alright reserved by developer 
+    </footer>
+    <script>
+        (()=>{
+            var author = localStorage.getItem('author');
+            document.getElementById('foot').innerText += author;
+        })();
+    </script>
+</body>
+</html>
