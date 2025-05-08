@@ -2,7 +2,7 @@ var express = require('express');
 var parser = require('body-parser');
 var path = require('node:path');
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 3000;
 var ejs = require('ejs');
 var assets = path.join(__dirname,"public");
 var statusLog ='';
@@ -18,15 +18,18 @@ app.get("/",(req,res)=>{
 });
 
 const conn = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    database:'messenger',
-    password:'blackman'
+    host: process.env.MYSQLHOST || 'localhost',
+    user: process.env.MYSQLUSER || 'root',
+    password: process.env.MYSQLPASSWORD || 'blackman',
+    database: process.env.MYSQLDATABASE || 'messenger',
+    port: process.env.MYSQLPORT || 3306
 });
 
-conn.connect((err)=>{
-    if(err){
-        console.log('This error has occured while trying to connect to database: ',err);
+conn.connect((err) => {
+    if (err) {
+        console.log('This error occurred while trying to connect to the database: ', err);
+    } else {
+        console.log('Database connected successfully.');
     }
 });
 
